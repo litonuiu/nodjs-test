@@ -114,5 +114,63 @@ con.connect(function(err) {
 		if (err) throw err;
 		console.log(result);
 	  }); */
+	
+	//delete a row
+	/*
+	var sql = "DELETE FROM customers WHERE address = 'Mountain 21'";
+	  con.query(sql, function (err, result) {
+		if (err) throw err;
+		console.log("Number of records deleted: " + result.affectedRows);
+	  }); */
+	
+	//drop table
+	/*
+	var sql = "DROP TABLE customers";
+	  con.query(sql, function (err, result) {
+		if (err) throw err;
+		console.log("Table deleted");
+	  }); */
+	
+	//Delete the table "customers" if it exists:
+	/*
+	var sql = "DROP TABLE IF EXISTS customers";
+	  con.query(sql, function (err, result) {
+		if (err) throw err;
+		console.log(result);
+	  }); */
+
+    //Overwrite the address column from "Valley 345" to "Canyon 123":
+	/*
+	var sql = "UPDATE customers SET address = 'Canyon 123' WHERE address = 'Valley 345'";
+	  con.query(sql, function (err, result) {
+		if (err) throw err;
+		console.log(result.affectedRows + " record(s) updated");
+	  }); */
   
+    //Select the 5 first records in the "customers" table:
+	/*
+	var sql = "SELECT * FROM customers LIMIT 5";
+	  con.query(sql, function (err, result) {
+		if (err) throw err;
+		console.log(result);
+	  }); */
+	
+	//Start from position 3, and return the next 5 records:
+	/*
+	var sql = "SELECT * FROM customers LIMIT 5 OFFSET 2";
+	  con.query(sql, function (err, result) {
+		if (err) throw err;
+		console.log(result);
+	  }); */
+
+	//Start from position 3, and return the next 5 records:
+	/*
+	var sql = "SELECT * FROM customers LIMIT 2, 5";
+	  con.query(sql, function (err, result) {
+		if (err) throw err;
+		console.log(result);
+	  }); */
+	  
+	  
+	  
 });
